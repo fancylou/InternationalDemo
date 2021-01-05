@@ -13,6 +13,9 @@
 		B1537C9A25A2E0A100992977 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1537C9825A2E0A100992977 /* Main.storyboard */; };
 		B1537C9C25A2E0A300992977 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1537C9B25A2E0A300992977 /* Assets.xcassets */; };
 		B1537C9F25A2E0A300992977 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1537C9D25A2E0A300992977 /* LaunchScreen.storyboard */; };
+		B1537CAE25A2EDB500992977 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B1537CB025A2EDB500992977 /* Localizable.strings */; };
+		B1537CB725A3058B00992977 /* BartyCrouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1537CB625A3058B00992977 /* BartyCrouch.swift */; };
+		B1537CBA25A3184500992977 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1537CB925A3184500992977 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,12 @@
 		B1537C9B25A2E0A300992977 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1537C9E25A2E0A300992977 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1537CA025A2E0A300992977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1537CA725A2E3D500992977 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B1537CA925A2EA7800992977 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B1537CAF25A2EDB500992977 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B1537CB225A2EDBA00992977 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B1537CB625A3058B00992977 /* BartyCrouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BartyCrouch.swift; sourceTree = "<group>"; };
+		B1537CB925A3184500992977 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +72,9 @@
 				B1537C9B25A2E0A300992977 /* Assets.xcassets */,
 				B1537C9D25A2E0A300992977 /* LaunchScreen.storyboard */,
 				B1537CA025A2E0A300992977 /* Info.plist */,
+				B1537CB025A2EDB500992977 /* Localizable.strings */,
+				B1537CB625A3058B00992977 /* BartyCrouch.swift */,
+				B1537CB925A3184500992977 /* Strings.swift */,
 			);
 			path = InternationalDemo;
 			sourceTree = "<group>";
@@ -74,6 +86,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B1537CA325A2E0A300992977 /* Build configuration list for PBXNativeTarget "InternationalDemo" */;
 			buildPhases = (
+				B1537CB425A3015000992977 /* bartycrouch */,
+				B1537CBC25A3184F00992977 /* swiftgen */,
 				B1537C8B25A2E0A100992977 /* Sources */,
 				B1537C8C25A2E0A100992977 /* Frameworks */,
 				B1537C8D25A2E0A100992977 /* Resources */,
@@ -108,6 +122,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B1537C8625A2E0A100992977;
 			productRefGroup = B1537C9025A2E0A100992977 /* Products */;
@@ -125,12 +140,52 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1537C9F25A2E0A300992977 /* LaunchScreen.storyboard in Resources */,
+				B1537CAE25A2EDB500992977 /* Localizable.strings in Resources */,
 				B1537C9C25A2E0A300992977 /* Assets.xcassets in Resources */,
 				B1537C9A25A2E0A100992977 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1537CB425A3015000992977 /* bartycrouch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = bartycrouch;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n";
+		};
+		B1537CBC25A3184F00992977 /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftgen > /dev/null; then\n    swiftgen\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B1537C8B25A2E0A100992977 /* Sources */ = {
@@ -139,6 +194,8 @@
 			files = (
 				B1537C9725A2E0A100992977 /* ViewController.swift in Sources */,
 				B1537C9325A2E0A100992977 /* AppDelegate.swift in Sources */,
+				B1537CBA25A3184500992977 /* Strings.swift in Sources */,
+				B1537CB725A3058B00992977 /* BartyCrouch.swift in Sources */,
 				B1537C9525A2E0A100992977 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +207,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B1537C9925A2E0A100992977 /* Base */,
+				B1537CA725A2E3D500992977 /* zh-Hans */,
+				B1537CA925A2EA7800992977 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -162,6 +221,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		B1537CB025A2EDB500992977 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1537CAF25A2EDB500992977 /* en */,
+				B1537CB225A2EDBA00992977 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -169,6 +237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
